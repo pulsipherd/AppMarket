@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import React, { Component, Link } from 'react';
+import { Header, Image } from 'semantic-ui-react';
 import axios from 'axios';
-import AppShow from './AppShow';
+// import AppShow from './AppShow';
 
 class Home extends Component {
   state = { apps: [] }
@@ -19,9 +19,9 @@ class Home extends Component {
         <p>Here's our app list. Click on the one that strikes your fancy!</p>
         <ul>
           <li>
-            {/* {this.state.apps.map(app =>
-              <Link to="/api/apps/show">{app.name}, <Image src={app.avatar} /></Link> */
-              AppShow}
+            {this.state.apps.map(app =>
+              <div><Link to="/api/apps/show">{app.name} <Image src={app.avatar} /></Link></div>
+            )}
           </li>
         </ul>
       </div>

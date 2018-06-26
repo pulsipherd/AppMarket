@@ -24,12 +24,12 @@ class Api::AppsController < ApplicationController
 
  def destroy
    App.find(params[:id]).destroy
-   render json: { message: ‘App deleted’}
+   render json: { message: ‘App deleted’ }
  end
 
  private
  def app_params
-   params.require(:app).permit(name:, complete:)
+   params.require(:app).permit(:name)
  end
  
 end
